@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Allow: /blogs/
+Allow: /our-works/
+Sitemap: https://www.oarstudios.in/sitemap.xml
+

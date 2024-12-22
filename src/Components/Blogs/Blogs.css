@@ -1,0 +1,292 @@
+.blogs-container {
+    padding: 2rem; /* Reduced padding for smaller devices */
+    font-family: "Montserrat", sans-serif;
+    color: #f5f5f5;
+}
+.blog-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Ensure alignment for larger screens */
+    align-items: center;
+    position: relative; /* For absolute positioning of the share button */
+}
+.blog-header h1 {
+    font-size: 4rem;
+    line-height: 1.5;
+    color: #ffffff;
+    font-weight: 700;
+    text-align: center; /* Center-align for better readability */
+
+}
+
+.blog-header h1 span {
+    display: block;
+    font-size: 3rem;
+    font-weight: 400;
+    margin-top: 0.5rem;
+    color: #ccc;
+}
+
+.blog-image {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.blog-image img {
+    width: 100%;
+    /* max-height: 30rem; */
+    border-radius: 10px;
+
+}
+
+.blog-content {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #e0e0e0;
+    margin-bottom: 2rem;
+}
+
+.blog-content h2 {
+    margin-top: 2rem;
+    font-size: 1.4rem;
+    font-weight: 650;
+    color: #ffffff; /* Subheading color */
+    text-align: left; /* Align left for better readability */
+}
+
+.blog-content p {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+    text-align: justify;
+}
+
+/* Styles for content image */
+.content-image {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.content-image img {
+    width: 100%;
+    /* max-height: 20rem; */
+    border-radius: 10px;
+  
+}
+
+/* Bottom section */
+.bottom-section {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #e0e0e0;
+    border-radius: 10px;
+    margin-top: 2rem;
+}
+
+.bottom-section h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(70deg, rgb(255, 255, 255) 32%, rgb(99, 99, 99) 70%);
+    -webkit-background-clip: text; /* Ensures background gradient clips to the text for WebKit browsers */
+    background-clip: text; /* Standard property */
+    color: transparent; /* Makes the text transparent */
+}
+
+.bottom-section p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+    line-height: 1.6;
+}
+
+
+
+/* Media Queries for Responsiveness */
+
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 576px) {
+    .blogs-container {
+        padding: 1rem;
+    }
+
+    .blog-header h1 {
+        font-size: 1.8rem;
+       
+    }
+
+    .blog-header h1 span {
+        font-size: 1.5rem;
+    }
+
+    .blog-image img {
+        max-height: 15rem;
+    }
+
+    .blog-content h2 {
+        font-size: 1.2rem;
+    }
+
+    .bottom-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .bottom-section p {
+        font-size: 1rem;
+    }
+
+   
+}
+
+/* Small devices (tablets, 576px and up) */
+@media (min-width: 576px) and (max-width: 768px) {
+    .blogs-container {
+        padding: 2rem;
+    }
+
+    .blog-header h1 {
+        font-size: 2.2rem;
+        
+    }
+
+    .blog-header h1 span {
+        font-size: 1.6rem;
+    }
+
+    .blog-image img {
+        max-height: 18rem;
+    }
+
+    .blog-content h2 {
+        font-size: 1.3rem;
+    }
+
+    .bottom-section h2 {
+        font-size: 2rem;
+    }
+
+   
+}
+
+/* Medium devices (desktops, 768px and up) */
+@media (min-width: 768px) and (max-width: 992px) {
+    .blogs-container {
+        padding: 2.5rem;
+    }
+
+    .blog-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .blog-header h1 span {
+        font-size: 1.8rem;
+    }
+
+    .blog-content h2 {
+        font-size: 1.4rem;
+    }
+
+    .bottom-section h2 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .blogs-container {
+        padding: 4rem 10rem;
+    }
+
+    .blog-header h1 {
+        font-size: 3rem;
+        text-align: left;
+    }
+
+    .blog-header h1 span {
+        font-size: 2.5rem;
+    }
+
+    .blog-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .bottom-section h2 {
+        font-size: 2.4rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* Share Icon Button */
+.share-icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 2rem; /* Adjust size */
+    transition: color 0.3s ease, transform 0.2s ease;
+    margin-left: 1rem; /* Space between title and button */
+}
+
+.share-icon-btn:hover {
+    color: rgb(255, 201, 64); /* Subtle hover color */
+    transform: scale(1.4); /* Slight zoom on hover */
+}
+
+.share-icon-btn:focus {
+    outline: none;
+}
+
+
+/* Media Queries */
+
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 576px) {
+    .share-icon-btn {
+        font-size: 1.4rem; /* Smaller icon for small devices */
+    }
+
+    .blog-header {
+        flex-direction: column; /* Stack title and share button vertically */
+        align-items: center;
+    }
+
+    .share-icon-btn {
+        margin-left: 0; /* Reset margin */
+        margin-top: 0.5rem; /* Add space above button */
+    }
+}
+
+/* Small devices (tablets, 576px and up) */
+@media (min-width: 576px) and (max-width: 768px) {
+    .share-icon-btn {
+        font-size: 1.6rem; /* Medium size for tablets */
+    }
+
+    .blog-header {
+        flex-direction: row; /* Title and button in a row */
+        justify-content: space-between;
+    }
+}
+
+/* Medium devices (desktops, 768px and up) */
+@media (min-width: 768px) and (max-width: 992px) {
+    .share-icon-btn {
+        font-size: 1.8rem; /* Larger size for desktops */
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .share-icon-btn {
+        font-size: 2rem; /* Default size for large devices */
+    }
+}

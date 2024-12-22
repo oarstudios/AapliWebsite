@@ -1,0 +1,208 @@
+.latest-article {
+  padding: 4rem 0.3rem 4rem 4rem; /* Adjust padding for smaller screens */
+  color: white;
+  font-family: "Arial", sans-serif;
+}
+
+.latest-article .slick-slider {
+  overflow: hidden;
+}
+
+.latest-article .slick-track {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.latest-article-title h2 {
+  font-size: 49px; /* Reduce font size for smaller screens */
+  text-align: left; /* Center the title for mobile */
+  background: linear-gradient(
+    70deg,
+    rgb(255, 255, 255) -21%,
+    rgb(77, 77, 77) 52%
+  );
+  -webkit-background-clip: text; /* For Safari/Chrome */
+  background-clip: text; /* Standard property */
+  color: transparent;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  margin-bottom: 2rem; /* Adjust spacing for smaller screens */
+}
+
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+.article-card {
+  border: 2px solid rgb(77, 77, 77);
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  min-height: 35rem;
+}
+
+@media (max-width: 768px) {
+  .article-card {
+    min-height: 20rem;
+  }
+}
+
+.article-image {
+  width: 100%;
+  height: 24rem; /* Adjust height for mobile */
+  object-fit: cover;
+}
+
+.article-content {
+  padding: 1.5rem; /* Reduce padding for smaller screens */
+  display: flex;
+  flex-direction: column;
+}
+
+.article-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem; /* Adjust font size */
+  margin-bottom: 1rem;
+  color: #b0b0b0;
+}
+
+.category {
+  background-color: rgb(229, 170, 242);
+  border-radius: 6px;
+  padding: 0.2rem 0.8rem;
+  font-size: 12px; /* Reduce font size */
+  font-weight: 600;
+  color: rgb(20, 20, 20);
+  font-family: "Montserrat", sans-serif;
+}
+
+.time {
+  color: rgb(77, 77, 77);
+  font-weight: 500;
+  font-size: 16px; /* Reduce font size */
+  font-family: "Montserrat", sans-serif;
+}
+
+.article-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 24px; /* Reduce font size */
+  text-align: left;
+  color: rgb(237, 237, 237);
+}
+
+.slick-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  width: 30px;
+  height: 30px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-50%);
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.slick-arrow.left {
+  left: -40px; /* Adjust the position of the left arrow */
+}
+
+.slick-arrow.right {
+  right: -40px; /* Adjust the position of the right arrow */
+}
+
+.slick-arrow:disabled {
+  display: none;
+}
+
+/* Adjust the spacing and layout for smaller screens */
+@media (max-width: 768px) {
+  .latest-article {
+    padding: 3rem 1rem;
+  }
+
+  .latest-article-title h2 {
+    font-size: 32px;
+    margin-bottom: 1.5rem;
+  }
+
+  .article-image {
+    height: 15rem; /* Further reduce height */
+  }
+
+  .article-content {
+    padding: 1rem;
+  }
+
+  .article-title {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 576px) {
+  .latest-article-title h2 {
+    font-size: 26px;
+    margin-bottom: 2rem;
+  }
+
+  .article-image {
+    height: 12rem; /* Further reduce height for smaller phones */
+  }
+
+  .article-content {
+    padding: 0.8rem;
+  }
+
+  .article-title {
+    font-size: 16px;
+  }
+}
+
+.bottom-line {
+  width: 100%; /* Slightly shorter than full width for aesthetics */
+  height: 2px; /* Thickness of the line */
+  background-color: rgb(77, 77, 77); /* Match the card border color */
+  opacity: 0.7; /* Subtle appearance */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .bottom-line {
+    width: 95%; /* Narrower width on smaller screens */
+    margin: 1rem auto; /* Adjust spacing for smaller screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .bottom-line {
+    width: 100%; /* Full-width on the smallest screens */
+  }
+}
+
+
+
+.slick-arrow.left {
+  left: 15px; /* Increase the value to bring it closer to the slider */
+}
+.slick-arrow.right {
+  right: 15px;
+}
+.slick-arrow {
+  z-index: 20; /* Higher than other elements */
+}
+.slick-arrow {
+  background: rgba(0, 0, 0, 0.7); /* Ensure visible background */
+  color: white;
+}

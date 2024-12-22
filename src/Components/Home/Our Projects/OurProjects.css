@@ -1,0 +1,274 @@
+.op{
+    border: none;
+    border-top: 1px solid #4d4d4d;
+    border-bottom: 1px solid #4d4d4d;
+    padding: 70px 0;
+    position: relative;
+}
+
+.shadow{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    height: 80%;
+    background-image: linear-gradient(to right, #141414 0%, #14141400 20%, #14141400 80%, #141414 100%);
+    background-color: transparent;
+    /* display: none; */
+    pointer-events: none; /* Prevent it from blocking clicks */
+}
+
+.op .opImg{
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 2 / 2;
+}
+
+
+.op .slick-slide{
+    /* border: 1px solid white; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    overflow: hidden;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    /* padding: 3px; */
+    border: 1px solid transparent;
+    justify-content: center;
+    /* margin: 0 30px; */
+}
+
+
+.op .slick-track{
+    display: flex;
+}
+
+.op .slick-track:nth-child(1)
+{
+    margin-bottom: 15px;
+}
+
+.op .heading{
+    width: 90%;
+    /* border: 1px solid white; */
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+.op .slick-slide{
+    position: relative;
+    z-index: 1;
+    /* border: 1px solid white; */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* margin: 0 7.5px; */
+}
+
+.op .slick-slide:hover{
+    /* filter: grayscale(0.42); */
+    border: 1px solid #FFC940;
+    /* cursor: pointer; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.op .slick-slide div{
+    overflow: hidden;
+    border-radius: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* position: relative;
+    cursor: pointer; */
+}
+
+.op .slick-slide:hover > div{
+    outline: 1px solid #FFC940;
+    outline-offset: -4px;
+    position: relative;
+}
+
+.op .slick-slide a{
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+
+
+.op .slick-slide .view{
+    border: 1px solid #FFC940;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    /* margin: auto; */
+    outline: 1px solid #FFC940;
+    outline-offset: -5px;
+}
+
+.view button{
+    color: #FFC940;
+    
+    border: none;
+    background-color: transparent;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-family: 'Agdasima';
+    background-color: #0d0d0d97;
+    margin-bottom: 40px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.op .fadeBox{
+    /* width: 0; */
+    border: 1px solid red;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+
+.light, .view{
+    opacity: 0;
+    top: 0;
+    position: absolute;
+    transition: 0.5s ease-in-out;
+    /* transition-delay: 0.5s; */
+    height: 100%;
+    width: 100%;
+}
+
+
+.op .dark{
+    /* width: 100%; */
+    opacity: 1;
+    transition: 0.5s ease-in-out;
+    /* transform: translate(0); */
+}
+
+.op .slick-slide:hover .fadeBox{
+
+}
+
+
+.op .slick-slide:hover .dark{
+    opacity: 0;
+    /* width: 0; */
+    /* transform: translate(100%, 100%); */
+}
+.op .slick-slide:hover .light{
+    opacity: 1;
+}
+.op .slick-slide:hover .view{
+    opacity: 1;
+}
+
+/* .op .slick-slide:hover::after{
+    content: "VIEW";
+    background-image: url('../../../Images/1.png');
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    color: rgb(255, 201, 64);
+    font-size: 1.1rem;
+    font-family: "Agdasima", sans-serif;
+    padding: 5px 15px ;
+    z-index: 1;
+    border-radius: 50px;
+    background-color: rgba(0, 0, 0, 0.649);
+}
+
+*/  
+
+
+
+
+
+.view button {
+    color: #FFC940;
+    border: none;
+    background-color: #0d0d0d97; /* Semi-transparent background */
+    padding: 8px 20px; /* Adjust padding for general responsiveness */
+    border-radius: 50px;
+    font-family: 'Agdasima', sans-serif;
+    margin-bottom: 40px;
+    font-size: clamp(1rem, 1.2vw, 1.2rem); /* Dynamic font size based on viewport */
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover Effect */
+.view button:hover {
+    background-color: #ffc940; /* Highlight on hover */
+    color: #0d0d0d; /* Contrast text color */
+    transform: scale(1.05); /* Slight scale-up for hover feedback */
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+    .view button {
+        padding: 6px 16px; /* Reduce padding for smaller screens */
+        font-size: clamp(0.9rem, 1.5vw, 1rem); /* Slightly smaller font */
+        margin-bottom: 30px; /* Reduce margin-bottom */
+    }
+}
+
+/* Further adjustments for very small screens (mobile) */
+@media (max-width: 480px) {
+    .view button {
+        padding: 4px 12px;
+        font-size: 0.8rem;
+        margin-bottom: 20px;
+    }
+}
+
+
+
+
+
+.op .slick-track {
+    display: flex; /* Change from Slick's default to flexbox */
+    gap: 15px; /* Define the desired gap */
+}
+
+.op .slick-slide {
+    flex: 0 0 auto; /* Ensure slides do not shrink or stretch */
+    border-radius: 25px;
+    overflow: hidden;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+.op .slick-list {
+    overflow: hidden; /* Prevent overflow caused by gaps */
+}
+@media (max-width: 768px) {
+    .op .slick-track {
+        gap: 10px; /* Reduce gap for smaller screens */
+    }
+}
+
+
+
+
+.op img {
+    pointer-events: auto;
+}

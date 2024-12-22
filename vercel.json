@@ -1,0 +1,9 @@
+{
+    "rewrites": [
+      {
+        "source": "/blog/:id",
+        "destination": "/index.html"
+      }
+    ]
+  }
+  

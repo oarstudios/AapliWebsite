@@ -1,0 +1,268 @@
+/* Ensuring smooth layout across all devices */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+/* Viewport scaling for iOS and other devices */
+html {
+  -webkit-text-size-adjust: 100%; /* Prevents text resizing on iOS */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+/* Slider Text Section */
+.slider-text-container {
+  text-align: center;
+  margin-top: 90px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  background-color: transparent;
+}
+
+.innovative-designs {
+  font-family: 'Instrument Serif', serif;
+  font-weight: 400;
+  font-size: 82px;
+  color: #FFFFFF;
+  letter-spacing: -0.06em;
+  line-height: 1.1em;
+  font-style: italic;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+  background-color: transparent;
+  animation: id 0.4s ease-in-out;
+}
+
+.seamless-solutions {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-size: 72px;
+  color: #FFC940;
+  margin-top: 10px;
+  line-height: 1.2em;
+  position: relative;
+  transition: 0.2s ease-in-out;
+  background-color: transparent;
+  animation: ss 0.4s ease-in-out;
+}
+
+@keyframes id {
+  0% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes ss {
+  0% {
+    transform: translateY(100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Video Slider Section */
+.container {
+  perspective: 1000px; /* Adds depth for 3D transformations */
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  margin-top: 3%;
+}
+
+.box .slick-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  height: 100%;
+  width: 98%;
+}
+
+.box {
+  transform: rotateX(4deg) rotateY(20deg) rotateZ(5deg); /* Simulates a skew in 3D */
+  transform-style: preserve-3d; /* Ensures child elements respect 3D space */
+  width: 200%;
+  height: 120%;
+  position: relative;
+  background-color: transparent;
+}
+
+.box .slick-slide img{
+  height: 100%;
+}
+
+.box .slick-slide video {
+  object-fit: cover;
+  aspect-ratio: 3/4;
+}
+
+/* Adjustments for iOS and Mobile Screens */
+@media (max-width: 425px) {
+  .box {
+    transform: rotateX(5deg) rotateY(45deg) rotateZ(4deg);
+  }
+
+  .innovative-designs {
+    font-size: 2.3rem;
+  }
+
+  .seamless-solutions {
+    font-size: 2rem;
+    margin-top: 0;
+  }
+
+  .slider-text-container {
+    margin-top: 0;
+    height: 150px;
+  }
+
+  .container {
+    margin-top: -60px;
+    height: 600px;
+    /* overflow: hidden; */
+  }
+
+  .box .slick-list {
+    height: 60%;
+  }
+
+  .box .slick-track,
+  .box .slick-slide,
+  .box .slick-slide div,
+  .box .slick-slide video {
+    height: 100%;
+  }
+}
+
+@media (min-width: 425px) and (max-width: 769px) {
+  .box {
+    transform: rotateX(5deg) rotateY(45deg) rotateZ(4deg);
+    width: 240%;
+  }
+
+  .innovative-designs {
+    font-size: 3.3rem;
+  }
+
+  .seamless-solutions {
+    font-size: 3rem;
+    margin-top: 0;
+  }
+
+  .slider-text-container {
+    margin-top: 0;
+  }
+
+  .container {
+    /* margin-top: -60px; */
+    height: 600px;
+  }
+
+  .box .slick-list {
+    height: 70%;
+  }
+
+  .box .slick-track,
+  .box .slick-slide,
+  .box .slick-slide div,
+  .box .slick-slide video {
+    height: 100%;
+  }
+}
+
+      .box .slick-list{
+        height: 60%;
+      } 
+      
+      .box .slick-track,.box .slick-slide,.box .slick-slide div, .box .slick-slide video{
+        height: 100%;
+     
+      }
+    
+
+    @media (min-width: 425px) and (max-width: 769px) {
+
+      .box{
+        transform: rotateX(5deg) rotateY(45deg) rotateZ(4deg);
+        width: 240%;
+      }
+
+      .innovative-designs{
+        font-size: 3.3rem;
+      } 
+      
+      .seamless-solutions{
+        font-size: 3rem;
+        margin-top: 0;
+      }
+
+      .slider-text-container{
+        margin-top: 0;
+
+      }
+
+      .container{
+        /* margin-top: -60px;  */
+        height: 600px;
+        /* overflow: hidden; */
+        /* border: 1px solid white; */
+      }
+
+      .box .slick-list{
+        height: 70%;
+      } 
+      
+      .box .slick-track,.box .slick-slide,.box .slick-slide div, .box .slick-slide video{
+        height: 100%;
+
+      }
+    }
+
+
+
+    .box .slick-slide {
+      transition: transform 0.3s ease;
+    }
+/* Additional styles to smoothen scrolling */
+html, body {
+  -webkit-overflow-scrolling: touch; /* Enables smooth scrolling on iOS */
+}
+
+/* Transition Effects */
+.box .slick-slide {
+  transition: transform 0.3s ease;
+}
+
+@media (min-width: 1440px) {
+  .container{
+    height: 100vh;
+  }
+}
+
+
+
+
+@media (min-width: 2056px){
+  .innovative-designs {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 500;
+    font-size: 120px;
+  }
+  .seamless-solutions {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 500;
+    font-size: 92px;
+  }
+}

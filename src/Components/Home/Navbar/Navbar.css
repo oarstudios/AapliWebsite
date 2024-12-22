@@ -1,0 +1,387 @@
+/* Navbar styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 28px;
+  position: relative;
+  z-index: 1;
+  border-bottom: 1px solid #4d4d4d;
+}
+
+.menu-overlay nav {
+  width: 80%;
+}
+
+.navbar-logo{
+  text-decoration: none;
+}
+
+.navbar-logo .logo-bold {
+  font-family: "Gajraj One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 36px;
+  color: #ffc940;
+  text-decoration: none;
+}
+
+.navbar-logo .studios {
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-style: italic;
+  color: #ffffff;
+  font-size: 32px;
+  text-decoration: none;
+}
+
+.hamburger {
+  cursor: pointer;
+  /* border: 1px solid white; */
+  display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 10px;
+}
+
+.hamburger div{
+  width: 100px;
+  height: 2px;
+  background-color: white;
+  transition:all 0.1s ease-in-out;
+}
+
+.hamburger:hover div:nth-child(2)
+{
+  width: 70px;
+}
+
+
+
+.hamburger img {
+  width: 88px;
+  height: 41px;
+}
+
+/* Overlay styles */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  bottom: 0;
+  width: 700px;
+  background: #141414;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  transition: right 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.menu-overlay.open {
+  right: 0;
+}
+
+/* Menu Links */
+.menu-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-links li {
+  margin: 20px 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.menu-links a {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  width: 100%;
+  color: #ffffff;
+  font-size: 80px;
+  line-height: 0.7em;
+  text-decoration: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0;
+  transition: all 0.5s ease, transform 0.3s ease;
+  position: relative;
+  z-index: 1;
+  background-color: transparent;
+}
+
+.menu-links a:hover {
+  /* background-color: #FFC940;  */
+  color: #141414;
+  font-size: 100px;
+  padding: 0;
+}
+
+.menu-links li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 0;
+  bottom: 0;
+  height: 100%;
+  transition: width 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.menu-links li:hover::after {
+  width: 100%;
+  background-color: #ffc940;
+}
+
+.menu-links li :hover .arrow-down {
+  opacity: 1;
+  transform: rotateZ(0deg);
+  transition-delay: 0.3s;
+}
+
+/* Arrow down icon */
+.arrow-down {
+  width: 40px;
+  height: 40px;
+  opacity: 0;
+  transition: all 0.3s ease, transform 0.3s ease;
+  transform: rotateZ(90deg);
+  transform-origin: right;
+  background-color: transparent;
+  margin-right: 15px;
+}
+
+/* Line below Navbar */
+/* .navbar::after {
+  margin-top: 80px;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 0.8px;
+  background-color: #4d4d4d;
+  position: absolute;
+ 
+  left: 0;
+} */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hamburger {
+    /* display: block; */
+  }
+
+  .menu-overlay {
+    display: none;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .menu-overlay {
+    width: 100%; /* Adjust the overlay to cover the screen for smaller devices */
+  }
+
+  .menu-links a {
+    font-size: 60px; /* Reduce font size for tablets */
+  }
+
+  .arrow-down {
+    width: 30px; /* Adjust arrow size */
+    height: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    /* display: block; */
+  }
+
+  .menu-overlay {
+    right: -100%; /* Hide the menu by default */
+    display: flex;
+    width: 100%; /* Adjust width for smaller devices */
+  }
+
+  .menu-overlay.open {
+    right: 0; /* Slide-in effect for smaller screens */
+  }
+
+  .menu-links a {
+    font-size: 50px; /* Further reduce font size for mobile */
+    line-height: 1.2em; /* Adjust line height for readability */
+  }
+
+  .menu-links a:hover {
+    font-size: 80px;
+  }
+
+  .menu-links li {
+    margin: 0px 0; /* Reduce spacing between menu items */
+  }
+
+  .arrow-down {
+    width: 40px; /* Adjust arrow size */
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 8px 16px; /* Reduce padding for smaller devices */
+  }
+
+  .hamburger img {
+    width: 64px; /* Resize the hamburger icon */
+    height: 30px;
+  }
+
+  .navbar-logo .logo-bold {
+    font-size: 28px; /* Adjust logo font size */
+  }
+
+  .navbar-logo .studios {
+    font-size: 24px; /* Adjust subtitle font size */
+  }
+
+  .menu-links a {
+    font-size: 42px; /* Further reduce font size for small screens */
+  }
+
+  .menu-links a:hover {
+    font-size: 60px;
+  }
+
+  .arrow-down {
+    width: 30px; /* Adjust arrow size */
+    height: 30px;
+  }
+
+  
+}
+
+
+@media (max-width: 768px) {
+  /* Apply the hover styles to the first list item (HOME) by default on mobile */
+  .menu-links li:first-child a {
+    color: #141414; /* Text color */
+    font-size: 60px; /* Same as hover state */
+    background-color: #ffc940; /* Yellow background */
+    padding: 0; /* Adjust padding */
+  }
+
+  .menu-links li:first-child::after {
+    width: 100%; /* Full width background */
+    background-color: #ffc940;
+  }
+
+  /* Ensure the arrow for HOME is always visible and not rotated */
+  .menu-links li:first-child .arrow-down {
+    opacity: 1; /* Fully visible */
+    transform: rotateZ(0deg); /* No rotation */
+  }
+
+  /* Regular hover styles for other items */
+  .menu-links li:not(:first-child):hover a {
+    color: #141414;
+    font-size: 100px;
+    padding: 0;
+  }
+
+  .menu-links li:not(:first-child):hover::after {
+    width: 100%;
+    background-color: #ffc940;
+  }
+
+  .menu-links li:not(:first-child):hover .arrow-down {
+    opacity: 1;
+    transform: rotateZ(0deg);
+    transition-delay: 0.3s;
+  }
+}
+
+
+
+
+/* Close Button */
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 2; /* Ensure it appears above other elements */
+}
+
+.close-button img {
+  width: 40px;
+  height: 40px;
+}
+
+/* Show close button in mobile view */
+@media (max-width: 1024px) {
+  .close-button {
+    display: block;
+  }
+}
+
+/* Hide close button in larger views */
+@media (min-width: 1025px) {
+  .close-button {
+    display: none;
+  }
+}
+
+
+
+
+@media (min-width: 2056px) {
+  .navbar {
+    padding: 16px 48px; /* Increase padding for larger screens */
+  }
+
+  .navbar-logo .logo-bold {
+    font-size: 48px; /* Increase font size for the logo */
+  }
+
+  .navbar-logo .studios {
+    font-size: 42px; /* Increase font size for the subtitle */
+  }
+
+  .hamburger img {
+    width: 120px; /* Resize the hamburger icon */
+    height: 60px;
+  }
+
+  .menu-overlay {
+    width: 40%; /* Reduce width for a better layout on large screens */
+  }
+
+  .menu-links a {
+    font-size: 100px; /* Increase font size for better visibility */
+    line-height: 1em;
+  }
+
+  .arrow-down {
+    width: 50px; /* Increase arrow size */
+    height: 50px;
+  }
+
+  .menu-links a:hover {
+    font-size: 120px; /* Make hover effect more prominent */
+  }
+
+  .menu-links li {
+    margin: 40px 0; /* Increase spacing between menu items */
+  }
+
+  .close-button img {
+    width: 60px; /* Larger close button for big screens */
+    height: 60px;
+  }
+}

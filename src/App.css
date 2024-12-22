@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Gajraj+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gajraj+One&family=Instrument+Serif:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gajraj+One&family=Instrument+Serif:ital@0;1&family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Gajraj+One&family=Instrument+Serif:ital@0;1&family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&display=swap');
+*{
+  background-color: #141414;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  /* cursor: pointer !important; */
+}
+
+html, body {
+  /* height: auto; */
+  /* overflow: visible; */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Edge */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.allComps{
+  position: relative;
+}
+
+
+input[type="checkbox"] {
+  appearance: none; /* Removes default styling */
+  width: 25px;
+  height: 25px;
+  border: 2px solid rgb(40,40,40); /* Box border */
+  border-radius: 5px;
+  background-color: transparent; /* Box color */
+  cursor: pointer;
+  padding: 0;
+}
+
+input[type="checkbox"]:checked {
+  background-color: transparent; /* Background when checked */
+  border: 2px solid rgb(40,40,40);
+  border-radius: 5px;
+
+  padding: 0;
+}
+
+input[type="checkbox"]:checked::before {
+
+  content: '✔'; /* Checkmark */
+  color: #eab114; /* Checkmark color */
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+.footer-wrapper {
+  display: flex;
+  flex-direction: column; /* Stack the components vertically */
+  width: 100%;
+  border-top: 1px solid rgb(40, 40, 40); /* Ensure consistent border */
+}
+
+.scroll-container {
+  /* overflow-y: auto; */
+  height: 100vh; /* Adjust height as needed */
+  scrollbar-width: none; /* Hides scrollbar for Firefox */
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none; /* Hides scrollbar for WebKit-based browsers */
+}
+
+#work{
+  /* position: absolute; */
+  top: 0;
+  z-index: 10;
+}
