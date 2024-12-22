@@ -82,7 +82,7 @@ function LatestArticle() {
     responsive: [
       {
         breakpoint: 1024,
-        settings: { slidesToShow: 3 },
+        settings: { slidesToShow: 2 },
       },
       {
         breakpoint: 768,

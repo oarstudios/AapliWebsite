@@ -192,3 +192,81 @@
     font-size: 20px;
   }
 }
+
+
+
+/* Media Query for iPad Air (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .footer-container {
+    flex-direction: column; /* Stack items vertically */
+    gap: 1rem; /* Add space between sections */
+  }
+
+  .footer-left, 
+  .footer-right {
+    width: 100%; /* Full width for both sections */
+    padding: 2rem; /* Adjust padding for smaller screens */
+    border-right: none; /* Remove right border */
+  }
+
+  .footer-left h2 {
+    font-size: 60px; /* Adjust heading size */
+    line-height: 1.1; /* Improve spacing */
+  }
+
+  .footer-right h3 {
+    font-size: 20px; /* Adjust heading size */
+  }
+
+  .footer-right-header {
+    
+   font-size: 2rem;
+  }
+
+  .email a {
+    font-size: 28px; /* Reduce email font size */
+  }
+
+  .copy-email {
+    font-size: 18px; /* Adjust font size */
+  }
+
+  .copy-email-container {
+    gap: 10px; /* Adjust spacing between icon and text */
+  }
+
+  .form-row {
+    flex-direction: column; /* Stack form inputs */
+    gap: 1rem; /* Space between rows */
+  }
+
+  .services-checkboxes {
+    flex-direction: column; /* Stack checkboxes */
+    align-items: flex-start; /* Align items to the left */
+    gap: 0.8rem; /* Space between checkboxes */
+  }
+
+  .submit-btn-footer {
+    font-size: 26px; /* Slightly smaller font size */
+    padding: 1rem 1.5rem; /* Adjust padding */
+    align-self: center; /* Center-align button */
+    border-radius: 12px; /* Rounded edges for better touch support */
+  }
+
+  input[type="text"], 
+  input[type="email"], 
+  textarea {
+    font-size: 16px; /* Adjust input font size */
+    padding: 0.5rem; /* Add padding for better touch */
+  }
+
+  .msgg {
+    font-size: 24px; /* Adjust message font size */
+    font-family: "Montserrat", sans-serif;
+    width: 100%; /* Ensure full width */
+  }
+
+  form {
+    padding: 1.5rem; /* Reduce overall form padding */
+  }
+}

@@ -1,5 +1,5 @@
 .latest-article {
-  padding: 4rem 0.3rem 4rem 4rem; /* Adjust padding for smaller screens */
+  padding: 4rem 1.5rem 4rem 4rem; /* Adjusted for medium screens */
   color: white;
   font-family: "Arial", sans-serif;
 }
@@ -11,28 +11,28 @@
 .latest-article .slick-track {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px; /* Slightly increased gap for better spacing */
 }
 
 .latest-article-title h2 {
-  font-size: 49px; /* Reduce font size for smaller screens */
-  text-align: left; /* Center the title for mobile */
+  font-size: 45px; /* Adjusted font size for medium screens */
+  text-align: left;
   background: linear-gradient(
     70deg,
     rgb(255, 255, 255) -21%,
     rgb(77, 77, 77) 52%
   );
-  -webkit-background-clip: text; /* For Safari/Chrome */
-  background-clip: text; /* Standard property */
+  -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
-  margin-bottom: 2rem; /* Adjust spacing for smaller screens */
+  margin-bottom: 2.5rem; /* Adjusted spacing for medium screens */
 }
 
 .articles-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr); /* Adjusted to show 3 columns on medium screens */
   gap: 20px;
   width: 100%;
 }
@@ -44,23 +44,17 @@
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  min-height: 35rem;
-}
-
-@media (max-width: 768px) {
-  .article-card {
-    min-height: 20rem;
-  }
+  min-height: 30rem; /* Adjusted height for medium screens */
 }
 
 .article-image {
   width: 100%;
-  height: 24rem; /* Adjust height for mobile */
+  height: 20rem; /* Adjusted for medium screens */
   object-fit: cover;
 }
 
 .article-content {
-  padding: 1.5rem; /* Reduce padding for smaller screens */
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
 }
@@ -68,7 +62,7 @@
 .article-meta {
   display: flex;
   justify-content: space-between;
-  font-size: 0.8rem; /* Adjust font size */
+  font-size: 0.9rem; /* Adjusted font size */
   margin-bottom: 1rem;
   color: #b0b0b0;
 }
@@ -77,7 +71,7 @@
   background-color: rgb(229, 170, 242);
   border-radius: 6px;
   padding: 0.2rem 0.8rem;
-  font-size: 12px; /* Reduce font size */
+  font-size: 13px; /* Adjusted font size for medium screens */
   font-weight: 600;
   color: rgb(20, 20, 20);
   font-family: "Montserrat", sans-serif;
@@ -86,14 +80,14 @@
 .time {
   color: rgb(77, 77, 77);
   font-weight: 500;
-  font-size: 16px; /* Reduce font size */
+  font-size: 16px;
   font-family: "Montserrat", sans-serif;
 }
 
 .article-title {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
-  font-size: 24px; /* Reduce font size */
+  font-size: 22px; /* Slightly reduced font size */
   text-align: left;
   color: rgb(237, 237, 237);
 }
@@ -101,108 +95,85 @@
 .slick-arrow {
   position: absolute;
   top: 50%;
-  z-index: 10;
-  width: 30px;
-  height: 30px;
-  background: rgba(0, 0, 0, 0.5);
+  z-index: 20; /* Higher z-index */
+  width: 40px; /* Increased size for better visibility */
+  height: 40px;
+  background: rgba(0, 0, 0, 0.7);
   color: white;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   transform: translateY(-50%);
-  font-size: 18px;
+  font-size: 20px;
   cursor: pointer;
 }
 
 .slick-arrow.left {
-  left: -40px; /* Adjust the position of the left arrow */
+  left: 20px; /* Adjusted for medium screens */
 }
 
 .slick-arrow.right {
-  right: -40px; /* Adjust the position of the right arrow */
+  right: 20px;
 }
 
 .slick-arrow:disabled {
   display: none;
 }
 
-/* Adjust the spacing and layout for smaller screens */
-@media (max-width: 768px) {
+/* Media Query for iPad Air and Medium Screens (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
   .latest-article {
-    padding: 3rem 1rem;
+    padding: 3rem 2rem; /* Reduce padding slightly */
   }
 
   .latest-article-title h2 {
-    font-size: 32px;
-    margin-bottom: 1.5rem;
-  }
-
-  .article-image {
-    height: 15rem; /* Further reduce height */
-  }
-
-  .article-content {
-    padding: 1rem;
-  }
-
-  .article-title {
-    font-size: 18px;
-  }
-}
-
-@media (max-width: 576px) {
-  .latest-article-title h2 {
-    font-size: 26px;
+    font-size: 36px; /* Reduced font size */
     margin-bottom: 2rem;
   }
 
+  .category {
+    padding: 0.2rem;
+  }
+
+  .articles-grid {
+    grid-template-columns: repeat(2, 1fr); /* Show 2 columns on iPad Air */
+    gap: 15px;
+  }
+
+  .article-card {
+    min-height: 25rem; /* Reduce height slightly */
+  }
+
   .article-image {
-    height: 12rem; /* Further reduce height for smaller phones */
+    height: 14rem; /* Reduce image height */
   }
 
   .article-content {
-    padding: 0.8rem;
+    padding: 1.2rem;
   }
 
   .article-title {
-    font-size: 16px;
+    font-size: 20px; /* Reduced for medium screens */
+  }
+
+  .bottom-line {
+    width: 90%; /* Slightly narrower line */
+    margin: 1rem auto;
+  }
+
+  .slick-arrow.left {
+    left: 16px; /* Adjust position */
+  }
+
+  .slick-arrow.right {
+    right: 10px;
   }
 }
 
-.bottom-line {
-  width: 100%; /* Slightly shorter than full width for aesthetics */
-  height: 2px; /* Thickness of the line */
-  background-color: rgb(77, 77, 77); /* Match the card border color */
-  opacity: 0.7; /* Subtle appearance */
-}
-
-/* Responsive adjustments */
+/* Adjustments for smaller devices */
 @media (max-width: 768px) {
-  .bottom-line {
-    width: 95%; /* Narrower width on smaller screens */
-    margin: 1rem auto; /* Adjust spacing for smaller screens */
+  .articles-grid {
+    grid-template-columns: repeat(1, 1fr); /* Single column for smaller screens */
   }
-}
-
-@media (max-width: 576px) {
-  .bottom-line {
-    width: 100%; /* Full-width on the smallest screens */
-  }
-}
-
-
-
-.slick-arrow.left {
-  left: 15px; /* Increase the value to bring it closer to the slider */
-}
-.slick-arrow.right {
-  right: 15px;
-}
-.slick-arrow {
-  z-index: 20; /* Higher than other elements */
-}
-.slick-arrow {
-  background: rgba(0, 0, 0, 0.7); /* Ensure visible background */
-  color: white;
 }
