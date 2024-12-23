@@ -177,3 +177,35 @@
     grid-template-columns: repeat(1, 1fr); /* Single column for smaller screens */
   }
 }
+
+
+
+
+
+/* Adjustments for smaller devices */
+@media (max-width: 768px) {
+  .articles-grid {
+    grid-template-columns: repeat(1, 1fr); /* Single column for smaller screens */
+    gap: 0; /* Removed gap */
+  }
+  .article-card{
+    height: 26rem;
+  }
+
+  .latest-article {
+    padding: 1.5rem; /* Removed padding */
+  
+  }
+  .article-image{
+    height: 17rem;
+  }
+
+  .latest-article .slick-track {
+    
+    gap: 0px;
+}
+.latest-article-title h2{
+  font-size: 24px;
+}
+ 
+}
