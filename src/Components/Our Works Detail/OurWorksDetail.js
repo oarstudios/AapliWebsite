@@ -33,10 +33,10 @@ const worksData = [
   },
   {
     id: "5",
-    title: "Nomad Interiors Web Design",
-    name: "NOMAD",
-    category: "WEB DESIGN",
-    imgSrc: require("../../Images/Nomad Interiors.webp"),
+    title: "HolaYog Logo Design",
+    name: "HolaYog",
+    category: "Logo DESIGN",
+    imgSrc: require("../../Images/HolaYog Video.png"),
   },
 ];
 
