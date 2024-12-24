@@ -58,7 +58,6 @@ function App() {
         {/* <Cursor/> */}
 <div className="scroll-container">
       <Router>
-      <ScrollToTop /> 
         {!loading && <Navbar />}
         
         <Routes>
@@ -71,6 +70,7 @@ function App() {
                 <Loader/>
               ):(
                 <>
+                <ScrollToTop /> 
                 <div id="slider">
                   <SliderNew />
                 </div>
