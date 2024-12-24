@@ -216,10 +216,12 @@ textarea:focus {
     font-size: 55px;
   }
 }
-@media (max-width: 1324px){
+@media (max-width: 1440px){
   .footer-left h2{
-    font-size: 78px;
+    font-size: 80px;
+    
   }
+ 
 }
 @media (max-width: 768px) {
   .footer-container {

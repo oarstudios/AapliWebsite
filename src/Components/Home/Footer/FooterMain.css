@@ -270,3 +270,12 @@
     padding: 1.5rem; /* Reduce overall form padding */
   }
 }
+@media (max-width: 1440px){
+  .footer-main-location{
+    font-size: 40px;
+  }
+  .footer-main-logo{
+    font-size: 110px;
+  }
+ 
+}
