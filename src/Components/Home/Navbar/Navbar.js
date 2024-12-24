@@ -46,6 +46,10 @@ const Navbar = () => {
         <span className="logo-bold">OAR</span> <span className="studios">STUDIOS</span>
       </Link>
 
+      {/* <button className="business-card-btn">
+    Business Card
+  </button> */}
+
       <div className="hamburger" onClick={toggleMenu}>
         <div className="l1"></div>
         <div className="l2"></div>

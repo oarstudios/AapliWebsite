@@ -71,7 +71,7 @@
   font-size: 3rem;
   margin-right: 30px;
   cursor: pointer;
-  color: rgb(48, 48, 48);
+  color: rgb(63 63 63);
 }
 
 .footer-main-social-icons i:hover {
@@ -82,7 +82,7 @@
   font-size: 3rem;
   text-align: right;
   font-family: "Bebas Neue", sans-serif;
-  color: rgb(48, 48, 48);
+  color:rgb(63 63 63);
 }
 .footer-main-copyright:hover{
   color: #ffc107;

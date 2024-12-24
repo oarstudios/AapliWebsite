@@ -17,11 +17,7 @@
 .latest-article-title h2 {
   font-size: 49px; /* Reduce font size for smaller screens */
   text-align: left; /* Center the title for mobile */
-  background: linear-gradient(
-    70deg,
-    rgb(255, 255, 255) -21%,
-    rgb(77, 77, 77) 52%
-  );
+  background: linear-gradient(70deg, rgb(255, 255, 255) -21%, rgb(77, 77, 77) 30%, rgba(255, 255, 255, 0.3) 70%, rgba(77, 77, 77, 0.5) 100%);
   -webkit-background-clip: text; /* For Safari/Chrome */
   background-clip: text; /* Standard property */
   color: transparent;

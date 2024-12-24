@@ -33,6 +33,7 @@
   color: #ffffff;
   font-size: 32px;
   text-decoration: none;
+  
 }
 
 .hamburger {
@@ -43,6 +44,7 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 gap: 10px;
+margin-left: 1rem;
 }
 
 .hamburger div{
@@ -385,3 +387,58 @@ gap: 10px;
     height: 60px;
   }
 }
+
+
+
+
+
+
+.business-card-btn {
+  padding: 10px 30px; /* Adjust padding for better proportions */
+  cursor: pointer;
+  border-radius: 30px; /* Adjust for fully rounded corners */
+  font-size: 18px;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: bold;
+  margin-left: auto;
+  border: 2px solid #353535;
+  position: relative;
+
+  /* Text gradient */
+  background: linear-gradient(94deg, #FFC940 -15.27%, #FC3F62 141.43%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Background color */
+  position: relative;
+  background-color: transparent;
+}
+
+.business-card-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(180deg, #171717 78.27%, #7D7D7D 130.1%);
+  z-index: -1; /* Push background below the text */
+}
+
+.business-card-btn:hover {
+  /* Maintain the text and background gradient on hover */
+  /* -webkit-text-fill-color: transparent; */
+  border: 2px solid #634A3B;
+
+
+}
+
+
+@media (max-width: 768px) {
+  .business-card-btn {
+    display: none; /* Hide button for mobile view if not needed */
+  }
+}
+

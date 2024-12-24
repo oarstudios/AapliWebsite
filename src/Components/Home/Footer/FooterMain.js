@@ -1,6 +1,6 @@
 import React from 'react';
 import './FooterMain.css'; // Include a CSS file for styling
-import location from "../../../Images/pin.png"
+import location from "../../../Images/pin.png";
 
 function FooterMain() {
   return (
@@ -17,22 +17,37 @@ function FooterMain() {
       <div className="footer-main-right">
         <div className="footer-main-links">
           <ul>
-            {/* <li>ABOUT US</li>
-            <li>PRIVACY POLICY</li>
-            <li>CONTACT US</li>
-            <li>ABOUT US</li>
-            <li>ABOUT US</li> */}
+            {/* Add footer links here if needed */}
           </ul>
         </div>
         <div className="footer-main-social">
           <div className="footer-main-social-icons">
-            <i className="fab fa-linkedin"></i>
-            <i className="fab fa-instagram"></i>
-            <i className="fab fa-facebook"></i>
+            <a
+              href="https://www.linkedin.com/company/oar-studios"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Visit our LinkedIn"
+            >
+              <i className="fab fa-linkedin"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/oar_studios/"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Visit our Instagram"
+            >
+              <i className="fab fa-instagram"></i>
+            </a>
+            <a
+              href="https://www.facebook.com/profile.php?id=61570363323576"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Visit our Facebook"
+            >
+              <i className="fab fa-facebook"></i>
+            </a>
           </div>
-          <div className="footer-main-copyright">
-            © OAR STUDIOS 2024
-          </div>
+          <div className="footer-main-copyright">© OAR STUDIOS 2024</div>
         </div>
       </div>
     </footer>
