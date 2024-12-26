@@ -87,7 +87,7 @@ const SliderNew = () => {
     }
   },[iww])
 
-  const videos = [acewares, didwania, holayog, nomad, puba, acewares, didwania, holayog, nomad, puba];
+  const videos = [acewares, holayog, didwania, nomad, puba, acewares, holayog, didwania, nomad, puba];
   const images = [acewaresImg, didwaniaImg, holayogImg, nomadImg, pubaImg, acewaresImg, didwaniaImg, holayogImg, nomadImg, pubaImg];
 
   return (
