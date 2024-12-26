@@ -16,6 +16,7 @@ import LatestArticle from "./Components/Home/Latest Article/LatestArticle";
 import Blogs from './Components/Blogs/Blogs';
 import Loader from './Components/Loader';
 import ScrollToTop from './Components/ScrollToTop';
+import OAR_business_card from './Images/OAR Business Card.pdf'
 
 import { Player } from 'lottie-react';
 import flow from './Videos/Flow 1.json'
@@ -52,9 +53,32 @@ function App() {
   const handleMouseLeave = () => {
     document.querySelector('.custom-cursor').classList.remove('hovered');
   };
+
+  const handleOpenPDF = () => {
+    window.open(OAR_business_card, '_blank', 'noopener,noreferrer');
+  };
+
+  const handleWhatsAppClick = () => {
+    const phoneNumber = '9987336411'; // Replace with the target phone number
+    const message = ''; // Replace with your message
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
   return (
     <div className='allComps'>
-    
+
+      {!loading && 
+
+      <div className="mbcMain">
+        <div className="mbcInner">
+
+        <div className="mbc" onClick={handleWhatsAppClick}>MESSAGE US</div>
+        <div className="vr"></div>
+        <div className="mbc" onClick={handleOpenPDF}>BUSINESS CARD</div>
+        </div>
+      </div>
+}
         {/* <Cursor/> */}
 <div className="scroll-container">
       <Router>

@@ -30,7 +30,86 @@ html {
 
 .allComps{
   position: relative;
+  /* border: 1px solid white; */
 }
+
+.mbcMain{
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  z-index: 5;
+  pointer-events: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  justify-content: flex-end;
+  /* border: 1px solid white; */
+}
+
+.mbcMain .mbcInner{
+  display: flex;
+  align-items: center;
+  transform: rotate(-90deg)
+  translateY(85px);
+  /* border: 1px solid white; */
+  position: absolute;
+  /* background-color: #000000; */
+  right: 0;
+  top: auto;
+  pointer-events: all;
+  /* gap: 2px; */
+  border-radius: 14px 14px 0 0;
+}
+
+.mbcInner .vr{
+  height: 30px;
+  width: 2px;
+}
+
+.mbcMain .mbc{
+  /* border: 1px solid white; */
+  padding: 4px 10px;
+  height: max-content;
+  background-color: #000000;
+  color: #4e4e4e;
+  font-family: "Bebas Neue", sans-serif;
+  cursor: pointer;
+  font-size: 1.2rem;
+  position: relative;
+}
+
+.mbcMain .mbc:nth-child(1)
+{
+  border-radius: 15px 0px 0px 0px;
+  border: 2px solid #4e4e4e;
+}
+.mbcMain .mbc:nth-child(1):hover
+{
+  border-radius: 15px 0px 0px 0px;
+  border: 2px solid #634A3B;
+}
+
+.mbcMain .mbc:nth-child(3)
+{
+  border-radius: 0px 15px 0px 0px;
+  border: 2px solid #4e4e4e;
+}
+.mbcMain .mbc:nth-child(3):hover
+{
+  border-radius: 0px 15px 0px 0px;
+  border: 2px solid #634A3B;
+}
+
+.mbcMain .mbc:hover{
+  /* background-color: #000000; */
+  background: linear-gradient(94deg, #FFC940 -15.27%, #FC3F62 141.43%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* border: 1px solid black; */
+}
+
 
 
 input[type="checkbox"] {
@@ -85,4 +164,16 @@ input[type="checkbox"]:checked::before {
   /* position: absolute; */
   top: 0;
   z-index: 10;
+}
+
+@media (max-width: 426px) {
+  .mbcMain{
+    justify-content: center;
+  }
+
+  .mbcMain .mbcInner{
+    transform: rotate(0) translateY(0);
+    right: auto;
+    bottom: 0;
+  }
 }
