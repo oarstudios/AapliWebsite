@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "../SliderNew/slidernew.css";
 import acewares from "../../../Videos/AceWearsvideo.webm";
 import didwania from "../../../Videos/DidwaniaVideo.webm";
-import holayog from "../../../Videos/HolaYogVideo.webm";
+import holayog from "../../../Videos/HolaYog Video.mp4";
 import nomad from "../../../Videos/NomadVideo.webm";
 import puba from "../../../Videos/PubaVideo.webm";
 import acewaresImg from "../../../Images/Ace Wears video.png";

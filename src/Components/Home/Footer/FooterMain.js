@@ -47,7 +47,7 @@ function FooterMain() {
               <i className="fab fa-facebook"></i>
             </a>
           </div>
-          <div className="footer-main-copyright">© OAR STUDIOS 2024</div>
+          <div className="footer-main-copyright">© OAR IT STUDIOS 2024</div>
         </div>
       </div>
     </footer>
