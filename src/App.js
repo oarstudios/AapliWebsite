@@ -60,9 +60,9 @@ function App() {
 
   const handleWhatsAppClick = () => {
     const phoneNumber = '9987336411'; // Replace with the target phone number
-    const message = ''; // Replace with your message
+    const message = 'Hello, I would like to know more about your services.'; // Customize the message
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    
+
     window.open(url, '_blank', 'noopener,noreferrer');
   };
   return (
