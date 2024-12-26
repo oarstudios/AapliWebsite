@@ -169,6 +169,7 @@ input[type="checkbox"]:checked::before {
 @media (max-width: 426px) {
   .mbcMain{
     justify-content: center;
+    bottom: 0;
   }
 
   .mbcMain .mbcInner{
