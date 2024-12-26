@@ -73,7 +73,7 @@ html {
 /* Video Slider Section */
 .container {
   perspective: 1000px; /* Adds depth for 3D transformations */
-  
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
