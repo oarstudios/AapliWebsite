@@ -67,14 +67,16 @@
   display: flex;
 }
 
-.footer-main-social-icons i {
+.footer-main-social-icons i, .footer-main-social-icons svg  {
   font-size: 3rem;
   margin-right: 30px;
   cursor: pointer;
   color: rgb(63 63 63);
+  height: 50px;
+  width: 50px;
 }
 
-.footer-main-social-icons i:hover {
+.footer-main-social-icons i:hover, .footer-main-social-icons svg :hover {
   color: #ffc107;
 }
 
