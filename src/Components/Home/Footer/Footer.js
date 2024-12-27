@@ -55,13 +55,13 @@ const Footer = () => {
   }, []);
 
   useEffect(()=>{
-      if(window.innerWidth <425)
+      if(window.innerWidth <= 520)
       {
         setVch(voucherMob)
       }else{
         setVch(voucher)
       }
-  },[])
+  },[window.innerWidth])
 
   const handleSubmit = (e) => {
     e.preventDefault();
