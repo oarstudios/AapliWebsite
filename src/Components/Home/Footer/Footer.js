@@ -1,10 +1,33 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Footer.css";
 import copy from "../../../Images/copy (1).png";
+import gift from "../../../Images/gift.png";
+import voucher from "../../../Videos/gift.mp4";
+import voucherMob from "../../../Videos/giftMobile.mp4";
 
 const Footer = () => {
   const [formStatus, setFormStatus] = useState(""); // Feedback message
   const [buttonText, setButtonText] = useState("Contact Us"); // Button text state
+  const [vd, setVd] = useState(false); // Toggle video display
+  const [rotation, setRotation] = useState({ x: 0, y: 0 }); // State to store rotation values
+  const videoRef = useRef(null)
+  const [vch, setVch] = useState(voucher)
+
+  const handleMouseMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect(); // Get the bounding box of the element
+    const x = ((e.clientX - rect.left) / rect.width) * 100; // Get x-coordinate as percentage
+    const y = ((e.clientY - rect.top) / rect.height) * 100; // Get y-coordinate as percentage
+
+    // Map percentages to rotation angles
+    const rotateX = (y - 50) / 5; // Adjust sensitivity by dividing
+    const rotateY = (x - 50) / -5;
+
+    setRotation({ x: rotateX, y: rotateY });
+  };
+
+  const handleMouseLeave = () => {
+    setRotation({ x: 0, y: 0 }); // Reset rotation on mouse leave
+  };
 
   const handleCopyEmail = () => {
     const email = "oarstudioz@gmail.com";
@@ -17,6 +40,28 @@ const Footer = () => {
         alert("Failed to copy email.");
       });
   };
+
+  const handleClickOutside = (e) => {
+    if (videoRef.current && !videoRef.current.contains(e.target)) {
+      setVd(false); // Hide the video div when clicking outside
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  useEffect(()=>{
+      if(window.innerWidth <425)
+      {
+        setVch(voucherMob)
+      }else{
+        setVch(voucher)
+      }
+  },[])
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -45,8 +90,39 @@ const Footer = () => {
       });
   };
 
+  const videoRef2 = useRef(null);
+  
+  const handleGiftClick = () => {
+    setVd(!vd);
+    if (!vd) {
+      setTimeout(() => {
+        videoRef2.current.play();
+      }, 700); // Play video when opened
+    } else {
+      videoRef2.current.pause(); // Pause video when closed
+    }
+  };
+
   return (
     <footer className="footer-container">
+      <div
+        className="voucher"
+        style={{
+          display: vd ? "flex" : "none",
+        }}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+      >
+        <div
+         ref={videoRef}
+          className="voucher-box"
+          style={{
+            transform: `rotateX(${-rotation.x}deg) rotateY(${-rotation.y}deg)`,
+          }}
+        >
+          <video src={vch} autoPlay muted preload="auto" ref={videoRef2} ></video>
+        </div>
+      </div>
       <div className="footer-left">
         <h2>Get your Project Estimate for free</h2>
       </div>
@@ -65,19 +141,19 @@ const Footer = () => {
           <label className="services-heading">Services that you require *</label>
           <div className="services-checkboxes">
             <label>
-              <input type="checkbox" name="design"  />
+              <input type="checkbox" name="design" />
               DESIGN
             </label>
             <label>
-              <input type="checkbox" name="development"  />
+              <input type="checkbox" name="development" />
               DEVELOPMENT
             </label>
             <label>
-              <input type="checkbox" name="branding"  />
+              <input type="checkbox" name="branding" />
               BRANDING
             </label>
             <label>
-              <input type="checkbox" name="other"  />
+              <input type="checkbox" name="other" />
               OTHER
             </label>
           </div>
@@ -100,15 +176,17 @@ const Footer = () => {
             <textarea name="message"></textarea>
           </label>
 
-
-        <div className="submit-container">
-          <button
-            type="submit"
-            className="submit-btn-footer"
-            disabled={buttonText === "Submitting..."}
-          >
-            {buttonText}
-          </button>
+          <div className="submit-container">
+            <button
+              type="submit"
+              className="submit-btn-footer"
+              disabled={buttonText === "Submitting..."}
+            >
+              {buttonText}
+            </button>
+            <div className="gift" onClick={handleGiftClick}>
+              <img src={gift} alt="" />
+            </div>
           </div>
         </form>
 
