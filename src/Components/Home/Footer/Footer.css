@@ -444,6 +444,11 @@ textarea:focus {
     height: 100px;
     width: 100px;
   }
+
+  .voucher-box{
+    width: 65%;
+  }
+
 }
 
 
