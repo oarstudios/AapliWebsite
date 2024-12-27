@@ -439,7 +439,7 @@ textarea:focus {
 
 @media (max-width: 425px) {
   .submit-container .gift {
-    right: -40px;
+    right: 0px;
     bottom: -25px;
     height: 100px;
     width: 100px;
