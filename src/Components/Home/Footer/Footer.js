@@ -76,7 +76,7 @@ const Footer = () => {
     fetch(scriptURL, { method: "POST", body: formData })
       .then((response) => {
         console.log("Success!", response);
-        setFormStatus("Form submitted successfully!");
+        setFormStatus("Form submitted successfully!");  
         setButtonText("Thank You!");
         e.target.reset(); // Reset the form
 
@@ -105,7 +105,7 @@ const Footer = () => {
 
   return (
     <footer className="footer-container">
-      <div
+      {/* <div
         className="voucher"
         style={{
           display: vd ? "flex" : "none",
@@ -122,7 +122,7 @@ const Footer = () => {
         >
           <video src={vch} autoPlay muted preload="auto" ref={videoRef2} ></video>
         </div>
-      </div>
+      </div> */}
       <div className="footer-left">
         <h2>Get your Project Estimate for free</h2>
       </div>
@@ -184,9 +184,9 @@ const Footer = () => {
             >
               {buttonText}
             </button>
-            <div className="gift" onClick={handleGiftClick}>
+            {/* <div className="gift" onClick={handleGiftClick}>
               <img src={gift} alt="" />
-            </div>
+            </div> */}
           </div>
         </form>
 
