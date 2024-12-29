@@ -1,87 +1,38 @@
-/* Slider Text Section */
-.slider-text-container {
-  text-align: center;
-  margin-top: 90px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 200px;
-  background-color: transparent;
-}
-
-.innovative-designs {
-  font-family: 'Instrument Serif', serif;
-  font-weight: 400;
-  font-size: 82px;
-  color: #FFFFFF;
-  letter-spacing: -0.06em;
-  line-height: 1.1em;
-  font-style: italic;
-  position: relative;
-  transition: all 0.2s ease-in-out;
-  background-color: transparent;
-  animation: id 0.4s ease-in-out;
-}
-
-.seamless-solutions {
-  font-family: "Bebas Neue", sans-serif;
-  font-weight: 400;
-  font-size: 72px;
-  color: #FFC940;
-  margin-top: 10px;
-  line-height: 1.2em;
-  position: relative;
-  transition: 0.2s ease-in-out;
-  background-color: transparent;
-  animation: ss 0.4s ease-in-out;
-}
-
-@keyframes id {
-  0% {
-    transform: translateY(-100px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-@keyframes ss {
-  0% {
-    transform: translateY(100px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-/* Slider Container */
+/* Slider Container with Tilt Effect */
 .slider-container {
+  perspective: 1000px; /* Adds depth for 3D transformations */
+  transform: rotateX(4deg) rotateY(20deg) rotateZ(5deg); /* Initial tilt */
+  transform-style: preserve-3d; /* Ensures child elements respect 3D space */
+  transition: transform 0.3s ease-in-out; /* Smooth transition for scroll effect */
+
+  margin-top: 4rem;
+
   overflow: hidden;
   width: 100%;
   position: relative;
-  /* margin-top: 20px; */
+  height: 30rem; /* Set the desired height */
+  background-color: transparent; /* Optional, to avoid any visible gaps */
 }
 
 .slider-track {
   display: flex;
-  width: calc(200%); /* Double the slides for infinite effect */
+  width: 100%;
   animation: slide 10s linear infinite;
 }
 
 .slider-item {
-  flex: 0 0 20%; /* Adjust based on number of slides to show */
+  flex: 0 0 20%; /* Adjust based on the number of visible items */
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden; /* Ensures no overflow */
 }
 
 .slider-video,
 .slider-image {
   width: 100%;
-  height: 70%;
-  object-fit: cover;
+  height: 100%;
+  object-fit: cover; /* Ensures the video/image fully covers the container */
 }
 
 @keyframes slide {
@@ -96,6 +47,10 @@
 @media (max-width: 425px) {
   .slider-item {
     flex: 0 0 50%;
+  }
+
+  .slider-container {
+    transform: rotateX(5deg) rotateY(45deg) rotateZ(4deg);
   }
 
   .innovative-designs {
