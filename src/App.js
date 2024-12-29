@@ -131,7 +131,7 @@ function App() {
                     <ScrollToTop />
                     <div id="slider">
                       {/* <SliderNew /> */}
-                      {/* <SliderUp/> */}
+                      <SliderUp/>
                     </div>
                     <div id="about">
                       <div className="gift" onClick={handleGiftClick}>

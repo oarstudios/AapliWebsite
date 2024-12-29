@@ -1,70 +1,113 @@
-/* General Slider Styles */
+/* Slider Text Section */
+.slider-text-container {
+  text-align: center;
+  margin-top: 90px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  background-color: transparent;
+}
+
+.innovative-designs {
+  font-family: 'Instrument Serif', serif;
+  font-weight: 400;
+  font-size: 82px;
+  color: #FFFFFF;
+  letter-spacing: -0.06em;
+  line-height: 1.1em;
+  font-style: italic;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+  background-color: transparent;
+  animation: id 0.4s ease-in-out;
+}
+
+.seamless-solutions {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-size: 72px;
+  color: #FFC940;
+  margin-top: 10px;
+  line-height: 1.2em;
+  position: relative;
+  transition: 0.2s ease-in-out;
+  background-color: transparent;
+  animation: ss 0.4s ease-in-out;
+}
+
+@keyframes id {
+  0% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes ss {
+  0% {
+    transform: translateY(100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Slider Container */
 .slider-container {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: auto;
-    perspective: 1000px;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  margin-top: 20px;
+}
+
+.slider-track {
+  display: flex;
+  width: calc(200%); /* Double the slides for infinite effect */
+  animation: slide 10s linear infinite;
+}
+
+.slider-item {
+  flex: 0 0 20%; /* Adjust based on number of slides to show */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-video,
+.slider-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
   }
-  
-  .slider-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  100% {
+    transform: translateX(-50%);
   }
-  
-  .slider-track {
-    display: flex;
-    transition: transform 0.6s ease-in-out;
+}
+
+@media (max-width: 425px) {
+  .slider-item {
+    flex: 0 0 50%;
   }
-  
-  .slider-slide {
-    flex: 0 0 100%;
-    max-width: 100%;
-    position: relative;
-  }
-  
-  .slider-slide img,
-  .slider-slide video {
-    width: 100%;
-    height: auto;
-  }
-  
-  .slider-text-container {
-    text-align: center;
-    margin-top: 90px;
-  }
-  
+
   .innovative-designs {
-    font-size: 2rem;
-    color: white;
+    font-size: 2.3rem;
   }
-  
+
   .seamless-solutions {
-    font-size: 1.5rem;
-    color: #ffc940;
-  }
-  
-  .slider-prev,
-  .slider-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
     font-size: 2rem;
-    padding: 0.5rem;
-    cursor: pointer;
-    z-index: 10;
+    margin-top: 0;
   }
-  
-  .slider-prev {
-    left: 10px;
+
+  .slider-text-container {
+    height: 150px;
   }
-  
-  .slider-next {
-    right: 10px;
-  }
-  
-  
+}

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import "./SliderNew";
+import "./SliderUp.css";
 import acewares from "../../../Videos/AceWearsvideo.webm";
 import didwania from "../../../Videos/DidwaniaVideo.webm";
 import holayog from "../../../Videos/HolaYog Video.mp4";
@@ -12,115 +12,65 @@ import nomadImg from "../../../Images/Nomad Video.png";
 import pubaImg from "../../../Images/Puba Video.png";
 
 const SliderUp = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
   const sliderRef = useRef(null);
-  const intervalRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 425);
 
   const videos = [acewares, holayog, didwania, nomad, puba];
   const images = [acewaresImg, didwaniaImg, holayogImg, nomadImg, pubaImg];
-  const slides = isMobile ? images : videos;
+  const content = isMobile ? images : videos;
 
-  // Adjust slides based on window size
+  const duplicateSlides = [...content, ...content];
+
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 425);
-    };
-
-    handleResize();
+    const handleResize = () => setIsMobile(window.innerWidth < 425);
     window.addEventListener("resize", handleResize);
-
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Auto-play functionality
   useEffect(() => {
-    startAutoplay();
-    return stopAutoplay;
-  }, [currentIndex]);
+    const slider = sliderRef.current;
+    let start = 0;
 
-  const startAutoplay = () => {
-    stopAutoplay(); // Clear any existing interval
-    intervalRef.current = setInterval(() => {
-      handleNext();
-    }, 3000);
-  };
+    const slideAnimation = () => {
+      start -= 1;
+      if (start <= -100 * content.length) {
+        start = 0;
+      }
+      slider.style.transform = `translateX(${start}%)`;
+      requestAnimationFrame(slideAnimation);
+    };
 
-  const stopAutoplay = () => {
-    if (intervalRef.current) clearInterval(intervalRef.current);
-  };
+    requestAnimationFrame(slideAnimation);
 
-  // Slide navigation
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
-  };
-
-  const handlePrev = () => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + slides.length) % slides.length
-    );
-  };
-
-  // Swipe functionality
-  const handleTouchStart = (e) => {
-    sliderRef.current.startX = e.touches[0].clientX;
-  };
-
-  const handleTouchMove = (e) => {
-    if (!sliderRef.current.startX) return;
-    const deltaX = e.touches[0].clientX - sliderRef.current.startX;
-
-    if (deltaX > 50) {
-      handlePrev();
-      sliderRef.current.startX = null;
-    } else if (deltaX < -50) {
-      handleNext();
-      sliderRef.current.startX = null;
-    }
-  };
+    return () => cancelAnimationFrame(slideAnimation);
+  }, [content]);
 
   return (
-    <div className="slider-container">
+    <>
       <div className="slider-text-container">
         <h1 className="innovative-designs">Innovative Designs</h1>
         <h2 className="seamless-solutions">SEAMLESS SOLUTIONS</h2>
       </div>
-      <div
-        className="slider-wrapper"
-        ref={sliderRef}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-      >
-        <div
-          className="slider-track"
-          style={{
-            transform: `translateX(-${currentIndex * 100}%)`,
-          }}
-        >
-          {slides.map((slide, index) => (
-            <div className="slider-slide" key={index}>
+      <div className="slider-container">
+        <div className="slider-track" ref={sliderRef}>
+          {duplicateSlides.map((item, index) => (
+            <div className="slider-item" key={index}>
               {isMobile ? (
-                <img src={slide} alt="" style={{ width: "100%" }} />
+                <img src={item} alt={`Slide ${index}`} className="slider-image" />
               ) : (
                 <video
-                  src={slide}
-                  style={{ width: "100%" }}
+                  src={item}
                   autoPlay
                   muted
                   loop
+                  className="slider-video"
                 ></video>
               )}
             </div>
           ))}
         </div>
-        <button className="slider-prev" onClick={handlePrev}>
-          &#10094;
-        </button>
-        <button className="slider-next" onClick={handleNext}>
-          &#10095;
-        </button>
       </div>
-    </div>
+    </>
   );
 };
 
