@@ -5,35 +5,19 @@ import didwania from "../../../Videos/DidwaniaVideo.webm";
 import holayog from "../../../Videos/HolaYog Video.mp4";
 import nomad from "../../../Videos/NomadVideo.webm";
 import puba from "../../../Videos/PubaVideo.webm";
-import acewaresImg from "../../../Images/Ace Wears video.png";
-import didwaniaImg from "../../../Images/Didwania Video.png";
-import holayogImg from "../../../Images/HolaYog Video.png";
-import nomadImg from "../../../Images/Nomad Video.png";
-import pubaImg from "../../../Images/Puba Video.png";
 
 const SliderUp = () => {
   const sliderRef = useRef(null);
   const containerRef = useRef(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 425);
-  const [perspective, setPerspective] = useState("rotateX(4deg) rotateY(20deg) rotateZ(5deg)");
 
   const videos = [acewares, holayog, didwania, nomad, puba];
-  const images = [acewaresImg, didwaniaImg, holayogImg, nomadImg, pubaImg];
-  const content = isMobile ? images : videos;
-
-  const duplicateSlides = [...content, ...content];
+  const duplicateSlides = [...videos, ...videos]; // Always use videos, even on mobile
 
   // Handle responsive updates
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 425);
-      if (window.innerWidth < 425) {
-        setPerspective("rotateX(5deg) rotateY(45deg) rotateZ(4deg)");
-      } else if (window.innerWidth >= 425 && window.innerWidth < 769) {
-        setPerspective("rotateX(5deg) rotateY(45deg) rotateZ(4deg)");
-      } else {
-        setPerspective("rotateX(4deg) rotateY(20deg) rotateZ(5deg)");
-      }
     };
 
     handleResize();
@@ -47,33 +31,36 @@ const SliderUp = () => {
     let start = 0;
 
     const slideAnimation = () => {
-      start -= 1;
-      if (start <= -100 * content.length) {
-        start = 0;
+      const sliderWidth = slider.scrollWidth;
+      start -= 1; // Adjust scroll speed
+      if (Math.abs(start) >= sliderWidth / 2) {
+        start = 0; // Reset the slider to prevent overflow
       }
-      slider.style.transform = `translateX(${start}%)`;
+      slider.style.transform = `translateX(${start}px)`;
       requestAnimationFrame(slideAnimation);
     };
 
     requestAnimationFrame(slideAnimation);
 
     return () => cancelAnimationFrame(slideAnimation);
-  }, [content]);
+  }, []);
 
-  // Scroll effect for tilt
+  // Scroll effect for tilt (disabled on mobile)
   useEffect(() => {
+    if (isMobile) return; // Skip tilt effect on mobile
+
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const offset = scrollY / 2;
 
       if (containerRef.current) {
-        containerRef.current.style.transform = `${perspective} translateY(${-offset}px)`;
+        containerRef.current.style.transform = `rotateX(4deg) rotateY(20deg) rotateZ(5deg) translateY(${-offset}px)`;
       }
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [perspective]);
+  }, [isMobile]);
 
   return (
     <>
@@ -85,17 +72,13 @@ const SliderUp = () => {
         <div className="slider-track" ref={sliderRef}>
           {duplicateSlides.map((item, index) => (
             <div className="slider-item" key={index}>
-              {isMobile ? (
-                <img src={item} alt={`Slide ${index}`} className="slider-image" />
-              ) : (
-                <video
-                  src={item}
-                  autoPlay
-                  muted
-                  loop
-                  className="slider-video"
-                ></video>
-              )}
+              <video
+                src={item}
+                autoPlay
+                muted
+                loop
+                className="slider-video"
+              ></video>
             </div>
           ))}
         </div>

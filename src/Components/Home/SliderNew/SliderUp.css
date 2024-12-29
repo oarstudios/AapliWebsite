@@ -1,74 +1,61 @@
-/* Slider Container with Tilt Effect */
-
-
-
+/* General Styles */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-
-/* Viewport scaling for iOS and other devices */
 html {
-  -webkit-text-size-adjust: 100%; /* Prevents text resizing on iOS */
-  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  -webkit-text-size-adjust: 100%;
+  -webkit-overflow-scrolling: touch;
 }
 
-
+body {
+  overflow-x: hidden;
+}
 
 .slider-container {
-  perspective: 1000px; /* Adds depth for 3D transformations */
-  transform: rotateX(4deg) rotateY(20deg) rotateZ(5deg); /* Initial tilt */
-  transform-style: preserve-3d; /* Ensures child elements respect 3D space */
-  transition: transform 0.3s ease-in-out; /* Smooth transition for scroll effect */
-
+  perspective: 1000px;
+  transform: rotateX(4deg) rotateY(20deg) rotateZ(5deg);
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease-in-out;
   margin-top: 90px;
-
-  overflow: hidden;
   width: 100%;
   position: relative;
-  height: 30rem; /* Set the desired height */
-  background-color: transparent; /* Optional, to avoid any visible gaps */
+  height: 30rem;
+  background-color: transparent;
 }
 
 .slider-track {
   display: flex;
-  width: 100%;
-  animation: slide 10s linear infinite;
+  animation: none;
 }
 
 .slider-item {
-  flex: 0 0 20%; /* Adjust based on the number of visible items */
+  flex: 0 0 20%;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden; /* Ensures no overflow */
+  overflow: hidden;
 }
 
-.slider-video,
-.slider-image {
-  width: 100%;
+.slider-video {
+  width: 100%; /* Increase the width while keeping height consistent */
   height: 100%;
-  object-fit: cover; /* Ensures the video/image fully covers the container */
-}
-
-@keyframes slide {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+  object-fit: cover;
 }
 
 @media (max-width: 425px) {
-  .slider-item {
-    flex: 0 0 50%;
-  }
-
   .slider-container {
-    transform: rotateX(5deg) rotateY(45deg) rotateZ(4deg);
+    transform: none; /* No tilt or rotation on mobile */
+    overflow: hidden;
+    margin: 20px 0px 20px 0px;
+    
+  }
+  
+
+  .slider-item {
+    flex: 0 0 75%;
   }
 
   .innovative-designs {
