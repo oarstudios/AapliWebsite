@@ -1,11 +1,29 @@
 /* Slider Container with Tilt Effect */
+
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+/* Viewport scaling for iOS and other devices */
+html {
+  -webkit-text-size-adjust: 100%; /* Prevents text resizing on iOS */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+
+
 .slider-container {
   perspective: 1000px; /* Adds depth for 3D transformations */
   transform: rotateX(4deg) rotateY(20deg) rotateZ(5deg); /* Initial tilt */
   transform-style: preserve-3d; /* Ensures child elements respect 3D space */
   transition: transform 0.3s ease-in-out; /* Smooth transition for scroll effect */
 
-  margin-top: 4rem;
+  margin-top: 90px;
 
   overflow: hidden;
   width: 100%;
