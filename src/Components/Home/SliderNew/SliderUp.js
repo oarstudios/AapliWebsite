@@ -10,6 +10,33 @@ const SliderUp = () => {
   const sliderRef = useRef(null);
   const containerRef = useRef(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 425);
+  const [fw, setFw] = useState("0 0 0")
+
+   const [perspective, setPerspective] = useState("rotateX(4deg) rotateY(20deg) rotateZ(5deg)");
+    const boxRef = useRef(null);
+  
+    // Responsive slider settings
+    useEffect(() => {
+      const updateSettings = () => {
+        if (window.innerWidth < 425) {
+          // setSlidesToShow(2);
+          setPerspective("rotateX(5deg) rotateY(45deg) rotateZ(4deg)");
+        } else if (window.innerWidth >= 425 && window.innerWidth < 769) {
+          // setSlidesToShow(4);
+          setPerspective("rotateX(5deg) rotateY(45deg) rotateZ(4deg)");
+        } else {
+          // setSlidesToShow(6);
+          setPerspective("rotateX(4deg) rotateY(20deg) rotateZ(5deg)");
+        }
+      };
+  
+      updateSettings();
+      window.addEventListener("resize", updateSettings);
+  
+      return () => {
+        window.removeEventListener("resize", updateSettings);
+      };
+    }, []);
 
   const videos = [acewares, holayog, didwania, nomad, puba];
   const duplicateSlides = [...videos, ...videos]; // Always use videos, even on mobile
@@ -47,20 +74,20 @@ const SliderUp = () => {
 
   // Scroll effect for tilt (disabled on mobile)
   useEffect(() => {
-    if (isMobile) return; // Skip tilt effect on mobile
+    // if (isMobile) return; 
 
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const offset = scrollY / 2;
 
       if (containerRef.current) {
-        containerRef.current.style.transform = `rotateX(4deg) rotateY(20deg) rotateZ(5deg) translateY(${-offset}px)`;
+        containerRef.current.style.transform =  isMobile ? `translateY(${-offset}px)`: `${perspective} translateY(${-offset}px)`;
       }
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [isMobile]);
+  }, [isMobile, perspective]);
 
   return (
     <>
