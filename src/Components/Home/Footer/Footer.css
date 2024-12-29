@@ -176,7 +176,7 @@ textarea:focus {
 
 .submit-container {
   display: flex;
-  /* justify-content: center;  */
+  justify-content: center; 
   margin-top: 2rem; /* Add space between form fields and button */
   align-items: center;
   position: relative;

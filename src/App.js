@@ -23,6 +23,7 @@ import voucherMob from './Videos/giftMobile.mp4';
 
 import { Player } from 'lottie-react';
 import flow from './Videos/Flow 1.json';
+import SliderUp from './Components/Home/SliderNew/SliderUp';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -129,7 +130,8 @@ function App() {
                   <>
                     <ScrollToTop />
                     <div id="slider">
-                      <SliderNew />
+                      {/* <SliderNew /> */}
+                      {/* <SliderUp/> */}
                     </div>
                     <div id="about">
                       <div className="gift" onClick={handleGiftClick}>
