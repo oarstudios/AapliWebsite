@@ -16,27 +16,30 @@ const SliderUp = () => {
     const boxRef = useRef(null);
   
     // Responsive slider settings
-    useEffect(() => {
-      const updateSettings = () => {
-        if (window.innerWidth < 425) {
-          // setSlidesToShow(2);
-          setPerspective("rotateX(5deg) rotateY(45deg) rotateZ(4deg)");
-        } else if (window.innerWidth >= 425 && window.innerWidth < 769) {
-          // setSlidesToShow(4);
-          setPerspective("rotateX(5deg) rotateY(45deg) rotateZ(4deg)");
-        } else {
-          // setSlidesToShow(6);
-          setPerspective("rotateX(4deg) rotateY(20deg) rotateZ(5deg)");
-        }
-      };
+    // useEffect(() => {
+    //   const updateSettings = () => {
+    //     if (window.innerWidth < 425) {
+          
+    //       setPerspective("rotateX(5deg) rotateY(45deg) rotateZ(4deg)");
+    //     } else if (window.innerWidth >= 425 && window.innerWidth < 769) {
+          
+    //       setPerspective("rotateX(5deg) rotateY(45deg) rotateZ(4deg)");
+    //     } else {
+          
+    //       setPerspective("rotateX(4deg) rotateY(20deg) rotateZ(5deg)");
+    //     }
+    //   };
   
-      updateSettings();
-      window.addEventListener("resize", updateSettings);
+    //   updateSettings();
+    //   window.addEventListener("resize", updateSettings);
   
-      return () => {
-        window.removeEventListener("resize", updateSettings);
-      };
-    }, []);
+    //   return () => {
+    //     window.removeEventListener("resize", updateSettings);
+    //   };
+    // }, []);
+
+    
+    
 
   const videos = [acewares, holayog, didwania, nomad, puba];
   const duplicateSlides = [...videos, ...videos]; // Always use videos, even on mobile
@@ -44,7 +47,7 @@ const SliderUp = () => {
   // Handle responsive updates
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 425);
+      setIsMobile(window.innerWidth < 769); // Combine mobile and tablet logic
     };
 
     handleResize();
