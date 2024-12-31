@@ -75,12 +75,12 @@ body {
 }
 
 /* Tablet Styles (min-width: 426px and max-width: 768px) */
-@media (min-width: 426px) and (max-width: 1024px) {
+@media (min-width: 426px) and (max-width: 1366px) {
   .slider-container {
     transform: none; /* No tilt or rotation on tablets */
     overflow: hidden;
     margin: 20px 0;
-    height: 28rem; /* Slightly taller for tablets */
+    height: 38rem; /* Slightly taller for tablets */
   }
 
   .slider-item {
@@ -111,11 +111,11 @@ body {
   }
 }
 
-@media (min-width: 426px) and (max-width: 1024px) {
+@media (min-width: 426px) and (max-width: 1366px) {
   .slider-container {
     transform: none !important; /* Force no tilt or rotation */
     overflow: hidden;
     margin: 20px 0;
-    height: 28rem;
+    height: 38rem;
   }
 }
