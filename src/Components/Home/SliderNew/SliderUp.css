@@ -75,7 +75,7 @@ body {
 }
 
 /* Tablet Styles (min-width: 426px and max-width: 768px) */
-@media (min-width: 426px) and (max-width: 1366px) {
+@media (min-width: 426px) and (max-width: 1180px) {
   .slider-container {
     transform: none; /* No tilt or rotation on tablets */
     overflow: hidden;
@@ -111,7 +111,7 @@ body {
   }
 }
 
-@media (min-width: 426px) and (max-width: 1366px) {
+@media (min-width: 426px) and (max-width: 1180px) {
   .slider-container {
     transform: none !important; /* Force no tilt or rotation */
     overflow: hidden;
