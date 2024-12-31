@@ -80,7 +80,7 @@ body {
     transform: none; /* No tilt or rotation on tablets */
     overflow: hidden;
     margin: 20px 0;
-    height: 38rem; /* Slightly taller for tablets */
+    height: 42rem; /* Slightly taller for tablets */
   }
 
   .slider-item {
@@ -116,6 +116,6 @@ body {
     transform: none !important; /* Force no tilt or rotation */
     overflow: hidden;
     margin: 20px 0;
-    height: 38rem;
+    height: 42rem;
   }
 }
