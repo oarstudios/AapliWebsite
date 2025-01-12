@@ -1,45 +1,32 @@
-
-
-
-import React, { useEffect, useState } from "react";
-import "../Components/Cursor.css"; // Import the CSS for the cursor
+import React, { useEffect, useState } from 'react';
+import './Cursor.css'; // Import the custom cursor styles
 
 const Cursor = () => {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [isInverted, setIsInverted] = useState(false);
+  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     const handleMouseMove = (e) => {
-      setPosition({ x: e.clientX, y: e.clientY });
+      setCursorPosition({
+        x: e.clientX , // Adjust for cursor size
+        y: e.clientY// Adjust for cursor size
+      });
     };
 
-    // Attach event listener for mousemove
-    document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener('mousemove', handleMouseMove);
 
-    // Clean up the event listener on component unmount
     return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
 
-  // Toggle inversion based on the cursor position or another condition (optional)
-  useEffect(() => {
-    const handleColorInversion = () => {
-      // Check if the cursor position is in a particular region to invert colors
-      setIsInverted((prev) => !prev); // Example: Toggle every time mouse moves
-    };
-
-    handleColorInversion();
-  }, [position]); // Trigger when position changes
-
   return (
     <div
-      className={`cursor ${isInverted ? "inverted" : ""}`}
+      className="custom-cursor"
       style={{
-        left: `${position.x}px`,
-        top: `${position.y}px`,
+        left: `${cursorPosition.x}px`,
+        top: `${cursorPosition.y}px`,
       }}
-    />
+    ></div>
   );
 };
 
