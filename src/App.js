@@ -89,7 +89,7 @@ import Cursor from './Components/Cursor';
 
     return (
       
-      <div className="allComps" style={{overflow: isVideoVisible ? "hidden": "auto"}}>
+      <div className="allComps">
         {isVideoVisible && (
           <div className="voucher" >
             <div ref={videoContainerRef} className="voucher-box">
