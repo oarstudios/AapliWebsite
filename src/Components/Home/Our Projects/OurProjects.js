@@ -41,7 +41,7 @@ const OurProjects = () => {
     infinite: true,
     slidesToShow: sts,
     slidesToScroll: 1,
-    autoplay: false, 
+    autoplay: true, 
     autoplaySpeed: 0,
     speed: 8000,
     cssEase: "linear",
