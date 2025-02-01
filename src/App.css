@@ -8,12 +8,17 @@
   background-color: #141414;
   margin: 0;
   padding: 0;
+  /* cursor: pointer; */
 }
 
 body{
   /* cursor: pointer !important; */
   overflow: hidden;
+  /* cursor: pointer; */
 }
+ ::-webkit-scrollbar{
+  display: none;
+ }
 
 html, body {
   /* height: auto; */
@@ -178,3 +183,6 @@ input[type="checkbox"]:checked::before {
     bottom: 0;
   }
 }
+
+
+

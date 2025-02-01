@@ -282,7 +282,10 @@ textarea:focus {
   align-items: center;
   justify-content: center;
 
-  pointer-events: none;
+  -webkit-pointer-events: auto;
+-moz-pointer-events: auto;
+pointer-events: auto;
+
 
  perspective: 1000px; /* Define the perspective depth */
   height: 100%; /* Adjust height as needed */
@@ -301,6 +304,7 @@ textarea:focus {
   /* background: linear-gradient(30deg, rgb(255, 201, 64) 0%, rgba(0, 0, 0, 0.22) 100%); */
   border-radius: 15px;
   background-color: transparent;
+  pointer-events: none;
 }
 
 .voucher video{

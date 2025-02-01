@@ -196,7 +196,7 @@
   right: 15px;
 }
 .slick-arrow {
-  z-index: 20; /* Higher than other elements */
+  /* z-index: 20; */
 }
 .slick-arrow {
   background: rgba(0, 0, 0, 0.7); /* Ensure visible background */
